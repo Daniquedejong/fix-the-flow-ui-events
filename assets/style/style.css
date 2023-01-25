@@ -4,6 +4,7 @@
   --secondary: #050840;
   --highlight-primary: #7ce7c9;
   --highlight-secondary: #9d7beb;
+  --red: #ff0000;
   --radius: 0.5rem;
   --pill: 2rem;
   --line: 0.1rem;
@@ -244,7 +245,7 @@ a:nth-of-type(6) {
   background-color: white;
 }
 
-/*....7/hover..werkt nog niet..*/
+/*....7/hover....*/
 a:nth-of-type(7) {
   position: relative;
   background-color: var(--highlight-primary);
@@ -256,10 +257,28 @@ a:nth-of-type(7) {
   animation-name: hover;
 }
 
-/*....8/blur..werkt nog niet..*/
+.hover {
+  display: inline-block;
+  margin: 0.2em;
+  padding: 0.4em 0.8em;
+  background: var(--secondary);
+  color: var(--highlight-secondary);
+  border: var(--line) solid var(--highlight-primary);
+  border-radius: var(--pill);
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.hover:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+
+/*....8/blur....*/
 a:nth-of-type(8) {
   position: relative;
-  background-color: var(--highlight-primary);
+  background-color: var(--highlight-secondary);
   color: var(--secondary);
   border-color: var(--secondary);
 }
@@ -283,5 +302,64 @@ a:nth-of-type(8) {
 
   100% {
     opacity: 100%;
+  }
+}
+
+/*....9/cool....*/
+a:nth-of-type(9) {
+  position: relative;
+  background: var(--highlight-primary);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.cool {
+  animation-name: cool;
+  animation-timing-function: cubic-bezier(0.850, 0.150, 0.20, 0.60);
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes cool {
+  20% {
+    transform: scale(1.5) translateX(-8rem) translateY(8rem);
+  }
+  40% {
+    transform: scale(3) translateX(0rem) translateY(8rem);
+  }
+  60% {
+    transform: scale(2.5) translateX(4rem) translateX(7rem);
+  }
+  80% {
+    transform: scale(1.4) translateX(0rem) translateX(0rem);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*....10/blur....*/
+a:nth-of-type(10) {
+  position: relative;
+  background: var(--highlight-secondary);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.high {
+  animation-name: high;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes high {
+  0% {
+    transform: translateY(0rem) rotate(0deg);
+  }
+  50% {
+    transform: translateY(20rem) rotate(130deg);
+  }
+  100% {
+    transform: translateY(50rem) rotate(200deg);
   }
 }
